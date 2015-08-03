@@ -8,10 +8,10 @@ feature 'Starting a new game' do
   end
 
   scenario 'request for you to fill in your name' do
-    # visit '/'
-    # click_link 'New Game'
-    # fill_in('name', with: 'Adrian')
-    # click_button 'Submit'
-    # expect(page).to have_content "Welcome to Battleships Adrian"
+    visit '/'
+    click_link 'New Game'
+    fill_in('name', with: 'Adrian')
+    click_button 'Submit'
+    expect(page).to have_content "Welcome to Battleships!"
   end
 end

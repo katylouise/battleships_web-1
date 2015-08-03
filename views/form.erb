@@ -1,0 +1,11 @@
+<div>
+    <% if @variable == '' || @variable == nil %>
+        What's your name?
+        <form>
+        <input type='text' name='name'>
+        <input type='submit' value='Submit'>
+        </form>
+    <% else %>
+        Welcome to Battleships!
+    <% end %>
+</div>
