@@ -7,3 +7,17 @@ Feature: Starting the game
     Given I am on the homepage
     When I follow "New Game"
     Then I should see "What's your name?"
+
+  Scenario: Entering name
+    Given I am on the homepage
+    When I follow "New Game"
+    When I fill in "name" with "Leon"
+    When I press "Submit"
+    Then I should see "Welcome to Battleships Leon!"
+
+  Scenario: Refreshes page if no input
+    Given I am on the homepage
+    When I follow "New Game"
+    When I fill in "name" with ""
+    When I press "Submit"
+    Then I should see "What's your name?"
