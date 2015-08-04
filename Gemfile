@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 gem 'battleships'
+gem 'cucumber'
+gem 'cucumber-sinatra'
 gem 'sinatra'
 
 group :development, :test do
@@ -9,4 +11,4 @@ group :development, :test do
   gem 'rspec-sinatra'
   gem 'shotgun'
 end
-gem 'cucumber'
+
