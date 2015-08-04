@@ -5,9 +5,13 @@ class BattleshipsWeb < Sinatra::Base
     erb :index
   end
 
-  get '/game' do
+  get '/register' do
     @name = params[:name]
     erb :form
+  end
+
+  get '/start_game' do
+    "hdjkfhdskjhf"
   end
 
   set :views, Proc.new { File.join(root, "..", "views") }

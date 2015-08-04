@@ -9,15 +9,26 @@ Feature: Starting the game
     Then I should see "What's your name?"
 
   Scenario: Entering name
-    Given I am on the homepage
-    When I follow "New Game"
+    Given I am on "register"
     When I fill in "name" with "Leon"
     When I press "Submit"
     Then I should see "Welcome to Battleships Leon!"
 
   Scenario: Refreshes page if no input
-    Given I am on the homepage
-    When I follow "New Game"
+    Given I am on "register"
     When I fill in "name" with ""
     When I press "Submit"
     Then I should see "What's your name?"
+
+  Scenario: Displays start button after filling in name
+    Given I am on "register"
+    When I fill in "name" with "Leon"
+    When I press "Submit"
+    When I press "Start Game"
+    Then I should see "hdjkfhdskjhf"
+
+
+
+
+
+

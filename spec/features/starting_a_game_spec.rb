@@ -22,4 +22,12 @@ feature 'Starting a new game' do
     click_button 'Submit'
     expect(page).to have_content "What's your name?"
   end
+
+  scenario 'After filling in name displays start button' do
+    visit '/register'
+    fill_in('name', with: 'Leon')
+    click_button 'Submit'
+    click_button 'Start Game'
+    expect(page).to have_content "hdjkfhdskjhf"
+  end
 end
