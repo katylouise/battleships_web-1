@@ -28,6 +28,6 @@ feature 'Starting a new game' do
     fill_in('name', with: 'Leon')
     click_button 'Submit'
     click_button 'Start Game'
-    expect(page).to have_content "hdjkfhdskjhf"
+    expect(page).to have_content "Player 1: Leon"
   end
 end

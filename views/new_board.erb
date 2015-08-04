@@ -1,6 +1,26 @@
 <div>
-  <%= $GAME.player_1.board.place_ship($DESTROYER, :A2, :horizontally) %>
-  <%= $GAME.player_1.board.place_ship($AIRCRAFT_CARRIER, :D6, :vertically) %>
+  <h1>Player 1: <%= $name %></h1>
   <pre><%= $GAME.own_board_view($GAME.player_1) %><pre>
-  <%= $GAME.player_2.shoot(:A2) %>
+  <form action='/game'>
+    <label>Please enter a coordinate:
+      <input type='text' name='coordinate'>
+    </label>
+    <label>Please enter a type of ship:
+       <select name='ship'>
+        <option value='destroyer'>Destroyer</option>
+        <option value='submarine'>Submarine</option>
+        <option value='cruiser'>Cruiser</option>
+        <option value='battleship'>Battleship</option>
+        <option value='aircraft_carrier'>Aircraft Carrier</option>
+      </select>
+    </label>
+    Please select a direction:
+    <label>Horizontal
+      <input type='radio' name='direction' value='horizontally' checked>
+    </label>
+    <label>Vertical
+      <input type='radio' name='direction' value='vertically'>
+    </label>
+      <input type='submit' value='Submit'>
+  </form>
 </div>

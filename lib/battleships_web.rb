@@ -7,11 +7,12 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/register' do
-    @name = params[:name]
+    $name = params[:name]
     erb :form
   end
 
-  get '/start_game' do
+  get '/game' do
+
     $GAME = Game.new(Player, Board)
     $DESTROYER = Ship.destroyer
     $AIRCRAFT_CARRIER = Ship.aircraft_carrier
