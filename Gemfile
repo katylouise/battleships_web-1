@@ -3,6 +3,7 @@ gem 'battleships'
 gem 'cucumber'
 gem 'cucumber-sinatra'
 gem 'sinatra'
+gem 'sinatra-session'
 
 group :development, :test do
   gem 'capybara'

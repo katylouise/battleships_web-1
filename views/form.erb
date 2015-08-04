@@ -1,14 +1,7 @@
 <div>
-    <% if $name == '' || $name == nil %>
         What's your name?
-        <form>
+        <form method='post'>
         <input type='text' name='name'>
         <input type='submit' value='Submit'>
         </form>
-    <% else %>
-        Welcome to Battleships <%= $name %>!
-        <form action='/game'>
-        <input type='submit' value='Start Game'>
-        </form>
-    <% end %>
 </div>

@@ -1,7 +1,7 @@
 <div>
-  <h1>Player 1: <%= $name %></h1>
-  <pre><%= $GAME.own_board_view($GAME.player_1) %><pre>
-  <form action='/game'>
+  <h1>Player 1: <%= session[:name] %></h1>
+  <pre><%= $GAME.own_board_view($GAME.player_1) %></pre>
+  <form method='post'>
     <label>Please enter a coordinate:
       <input type='text' name='coordinate'>
     </label>
