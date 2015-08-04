@@ -1,6 +1,6 @@
 <div>
-  <%= $GAME.player_1.board.place_ship($DESTROYER, 'A2', :horizontally) %>
-  <%= $GAME.player_1.board.place_ship($AIRCRAFT_CARRIER, 'D6', :vertically) %>
-  <%= $GAME.own_board_view($GAME.player_1) %>
-  <%= $GAME.player_1.shoot('A2') %>
+  <%= $GAME.player_1.board.place_ship($DESTROYER, :A2, :horizontally) %>
+  <%= $GAME.player_1.board.place_ship($AIRCRAFT_CARRIER, :D6, :vertically) %>
+  <pre><%= $GAME.own_board_view($GAME.player_1) %><pre>
+  <%= $GAME.player_2.shoot(:A2) %>
 </div>
