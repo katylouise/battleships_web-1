@@ -25,7 +25,7 @@ Feature: Starting the game
     When I fill in "name" with "Leon"
     When I press "Submit"
     When I press "Start Game"
-    Then I should see "hdjkfhdskjhf"
+    Then I should see "Player 1: Leon"
 
 
 

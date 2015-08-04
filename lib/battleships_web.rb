@@ -28,12 +28,17 @@ class BattleshipsWeb < Sinatra::Base
     $GAME = Game.new(Player, Board)
     $DESTROYER = Ship.destroyer
     $AIRCRAFT_CARRIER = Ship.aircraft_carrier
+    # PLACE SHIP METHOD if Params != &&
     erb :new_board
   end
 
-  # post '/game' do
-
-  # end
+  post '/game' do
+    @ship = params[:ship]
+    @direction = params[:direction]
+    @coordinate = params[:coordinate]
+    $GAME.player_1.board.place_ship(Ship.send(@ship.to_sym), @coordinate.to_sym, @direction.to_sym)
+    erb :new_board
+  end
 
   set :views, Proc.new { File.join(root, "..", "views") }
   # start the server if ruby file executed directly
