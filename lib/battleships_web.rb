@@ -26,9 +26,6 @@ class BattleshipsWeb < Sinatra::Base
 
   get '/game' do
     $GAME = Game.new(Player, Board)
-    $DESTROYER = Ship.destroyer
-    $AIRCRAFT_CARRIER = Ship.aircraft_carrier
-    # PLACE SHIP METHOD if Params != &&
     erb :new_board
   end
 
@@ -37,7 +34,18 @@ class BattleshipsWeb < Sinatra::Base
     @direction = params[:direction]
     @coordinate = params[:coordinate]
     $GAME.player_1.board.place_ship(Ship.send(@ship.to_sym), @coordinate.to_sym, @direction.to_sym)
+    redirect '/gameplay' if $GAME.player_1.board.ships.count > 2
     erb :new_board
+  end
+
+  get '/gameplay' do
+    erb :gameplay
+  end
+
+  post '/gameplay' do
+    @coordinate = params[:coordinate]
+    @result = $GAME.player_1.shoot(@coordinate.to_sym)
+    erb :gameplay
   end
 
   set :views, Proc.new { File.join(root, "..", "views") }

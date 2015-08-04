@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature 'Playing a game' do
-  scenario 'Entering a coordinate' do
+feature 'Setting up a game' do
+  scenario 'Placing a ship' do
     visit '/game'
     fill_in('coordinate', with: 'A2')
     select 'Destroyer', :from => 'ship'

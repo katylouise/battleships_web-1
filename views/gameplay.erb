@@ -1,0 +1,10 @@
+<h1>Player 1: <%= session[:name] %></h1>
+<pre><%= $GAME.own_board_view($GAME.player_1) %></pre>
+<pre><%= $GAME.own_board_view($GAME.player_2) %></pre>
+<form method='post'>
+  <label>Please enter a target:
+    <input type='text' name='coordinate'>
+  </label>
+  <input type='submit' value='Fire!'>
+</form>
+<%= @result %>
