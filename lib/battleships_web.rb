@@ -10,7 +10,7 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/game' do
-    @variable = params[:name]
+    @name = params[:name]
     erb :form
   end
 

@@ -9,3 +9,4 @@ group :development, :test do
   gem 'rspec-sinatra'
   gem 'shotgun'
 end
+gem 'cucumber'

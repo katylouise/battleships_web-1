@@ -3,19 +3,33 @@ GEM
   specs:
     addressable (2.3.8)
     battleships (0.1.2)
+    builder (3.2.2)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cucumber (2.0.2)
+      builder (>= 2.1.2)
+      cucumber-core (~> 1.2.0)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.2)
+    cucumber-core (1.2.0)
+      gherkin (~> 2.12.0)
     diff-lcs (1.2.5)
     extlib (0.9.16)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
     highline (1.7.3)
     launchy (2.4.3)
       addressable (~> 2.3)
     mime-types (2.6.1)
     mini_portile (0.6.2)
+    multi_json (1.11.2)
+    multi_test (0.1.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     rack (1.6.4)
@@ -58,6 +72,7 @@ PLATFORMS
 DEPENDENCIES
   battleships
   capybara
+  cucumber
   launchy
   rspec
   rspec-sinatra
