@@ -20,12 +20,7 @@ Feature: Starting the game
     When I press "Submit"
     Then I should see "What's your name?"
 
-  Scenario: Displays start button after filling in name
-    Given I am on "register"
-    When I fill in "name" with "Leon"
-    When I press "Submit"
-    When I press "Start Game"
-    Then I should see "Player 1: Leon"
+
 
 
 
