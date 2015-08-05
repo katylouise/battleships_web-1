@@ -25,16 +25,14 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/game' do
-    $GAME = Game.new(Player, Board)
+    $game = Game.new(Player, Board)
     erb :new_board
   end
 
   post '/game' do
-    @ship = params[:ship]
-    @direction = params[:direction]
-    @coordinate = params[:coordinate]
-    $GAME.player_1.board.place_ship(Ship.send(@ship.to_sym), @coordinate.to_sym, @direction.to_sym)
-    redirect '/gameplay' if $GAME.player_1.board.ships.count > 2
+    @parameters = params
+    $game.player_1.board.place_ship(Ship.send(@parameters[:ship].to_sym), @parameters[:coordinate].to_sym, @parameters[:direction].to_sym)
+    redirect '/gameplay' if $game.player_1.board.ships.count > 2
     erb :new_board
   end
 
@@ -44,7 +42,7 @@ class BattleshipsWeb < Sinatra::Base
 
   post '/gameplay' do
     @coordinate = params[:coordinate]
-    @result = $GAME.player_1.shoot(@coordinate.to_sym)
+    @result = $game.player_1.shoot(@coordinate.to_sym)
     erb :gameplay
   end
 
